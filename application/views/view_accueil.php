@@ -139,7 +139,20 @@
 
     <footer class="footer text-center ">
     <h1>Fonction Sacha</h1>
-          
+          <?php
+          foreach ($lesUsers as $unUser){
+            echo $unUser['photoUser'];
+            echo "<option value='" .$unUser->idUser. "'>".$unUser->nomUser."</option>";
+            if ($unUser->sexe == 0){
+                echo  '<img src="https://nsa39.casimages.com/img/2018/10/17/mini_181017020836938365.png" />';
+               
+              }
+               else {
+                 echo '<img src="https://nsa39.casimages.com/img/2018/10/17/mini_181017020836876248.png" />';
+
+          }
+        }
+          ?>
     </footer>
 </body>
 </html>
