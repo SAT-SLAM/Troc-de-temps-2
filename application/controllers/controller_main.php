@@ -61,13 +61,21 @@ class controller_main extends CI_Controller {
         redirect('controller_main/index', 'refresh');
     }
 
+    public function userSacha()
+    {
+        $this->load->model('model_users');
+        $data['lesUsers']=$this->model_users->getUser();
+        $this->load->view('view_accueil',$data);
+    }
+
     // Offres (affichage, création, modification)
 
+   /*
     public function AfficherOffre()
     {
         $this->load->model("model_offre");
 		$data["lesOffres"] = $this->model_offre->AfficherLesOffres("1");
-    }
+    }*/
 
 
 
