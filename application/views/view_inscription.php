@@ -25,26 +25,29 @@
                                 <br>
                                 <br>
                             </div>
-                            <form id="signin">
+                            <form id="signin" role="form" method="post" action="<?php echo base_url('controller_main/setInscription'); ?>">
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="nomUser" placeholder="Nom et prénom" checked>
+                                    <input type="text" class="form-control" id="nomUser" name="nomUser" placeholder="Nom et prénom" checked>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="email" placeholder="Email" checked>
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" checked>
                                 </div>
                                 <div class="form-group">
                                     <input type="radio" name="sexe" value="0"> Homme 
                                     <input type="radio" name="sexe" value="1"> Femme
                                 </div>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" name="dateNaissance" checked>
+                                    <input type="date" class="form-control" id="dateNaissance" name="dateNaissance" checked>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="login" placeholder="login" checked>
+                                    <input type="text" class="form-control" id="login" name="login" placeholder="login" checked>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="mdp" placeholder="Mot de passe">
+                                    <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="photoUser" name="photoUser" placeholder="URL de votre image">
                                 </div>
                                 <div class="forgot">
                                 <a href="<?php echo base_url('controller_main/index');?>" id="connexion">Je suis déjà inscrit</a>
