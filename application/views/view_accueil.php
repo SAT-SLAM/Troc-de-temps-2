@@ -23,7 +23,7 @@
     <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg "  color-on-scroll="100"  id="sectionsNav">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="../index.html">SAT</a>
+                <a class="navbar-brand" >SAT</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     <span class="navbar-toggler-icon"></span>
@@ -139,7 +139,20 @@
 
     <footer class="footer text-center ">
     <h1>Fonction Sacha</h1>
-          
+          <?php
+          foreach ($lesUsers as $unUser){
+            echo $unUser['photoUser'];
+            echo "<option value='" .$unUser->idUser. "'>".$unUser->nomUser."</option>";
+            if ($unUser->sexe == 0){
+                echo  '<img src="https://nsa39.casimages.com/img/2018/10/17/mini_181017020836938365.png" />';
+               
+              }
+               else {
+                 echo '<img src="https://nsa39.casimages.com/img/2018/10/17/mini_181017020836876248.png" />';
+
+          }
+        }
+          ?>
     </footer>
 </body>
 </html>

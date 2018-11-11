@@ -81,14 +81,12 @@ class controller_main extends CI_Controller {
 
     // Offres (affichage, création, modification)
 
+   
     public function AfficherOffre()
     {
-        $this->load->model("model_offre");
+        $this->load->model('model_offre');
 		$data["lesOffres"] = $this->model_offre->AfficherLesOffres("1");
     }
-
-
-
 
 }
 ?>
