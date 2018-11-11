@@ -51,7 +51,7 @@ class controller_main extends CI_Controller {
           $this->load->view("view_accueil",$data);
         }
         else{
-          $this->load->view("erreurco");
+          $this->load->view("view_erreurco");
         }
         
 }
