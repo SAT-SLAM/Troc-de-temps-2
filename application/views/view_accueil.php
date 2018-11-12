@@ -16,7 +16,7 @@
     <script type="text/javascript" src="../JQuery/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="../JS/mesFonctions.js"></script>
     <script type="text/javascript" src="..//JS/accueil.js"></script>
-
+coucou
 </head>
 
 <body class="profile-page">
