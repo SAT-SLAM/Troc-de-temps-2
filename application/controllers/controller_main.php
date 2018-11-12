@@ -61,11 +61,22 @@ class controller_main extends CI_Controller {
         redirect('controller_main/index', 'refresh');
     }
 
-    public function userSacha()
+    public function setInscription()
     {
-        $this->load->model('model_users');
-        $data['lesUsers'] = $this->model_users->getUsers();
-        $this->load->view('view_accueil',$data);
+        $this->load->model("model_infoUser");
+        $data["user"] = $this->model_infoUser->getUser2($_POST["login"]);
+        if ($data["user"] == null)
+        {
+            $this->model_infoUser->setUser($_POST["nomUser"], $_POST["sexe"], $_POST["email"], $_POST["dateNaissance"], $_POST["login"], $_POST["mdp"], $_POST["photoUser"]);
+            $data["nomUser"] = $_POST["nomUser"];
+            $data["sexe"] = $_POST["sexe"];
+            $data["email"] = $_POST["email"];
+            $data["dateNaissance"] = $_POST["dateNaissance"];
+            $data["login"] = $_POST["login"];
+            $data["mdp"] = $_POST["mdp"];
+            $data["photoUser"] = $_POST["photoUser"];
+            $this->load->view("view_connexion", $data);
+        }
     }
 
     // Offres (affichage, création, modification)
@@ -76,9 +87,6 @@ class controller_main extends CI_Controller {
         $this->load->model('model_offre');
 		$data["lesOffres"] = $this->model_offre->AfficherLesOffres("1");
     }
-
-
-
 
 }
 ?>
