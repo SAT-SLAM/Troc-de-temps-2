@@ -64,8 +64,8 @@ class controller_main extends CI_Controller {
     public function userSacha()
     {
         $this->load->model('model_users');
-        $tab['lesUsers']=$this->model_users->getUser();
-        $this->load->view('view_accueil',$tab);
+        $data['lesUsers'] = $this->model_users->getUsers();
+        $this->load->view('view_accueil',$data);
     }
 
     // Offres (affichage, création, modification)
@@ -75,7 +75,7 @@ class controller_main extends CI_Controller {
     {
         $this->load->model('model_offre');
 		$data["lesOffres"] = $this->model_offre->AfficherLesOffres("1");
-    }*/
+    }
 
 
 

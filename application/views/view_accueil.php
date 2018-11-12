@@ -138,10 +138,12 @@
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 
     <footer class="footer text-center ">
+    
     <h1>Fonction Sacha</h1>
-          <?php
+    
+        <?php
           foreach ($lesUsers as $unUser){
-            echo $unUser['photoUser'];
+            echo $unUser->photoUser;
             echo "<option value='" .$unUser->idUser. "'>".$unUser->nomUser."</option>";
             if ($unUser->sexe == 0){
                 echo  '<img src="https://nsa39.casimages.com/img/2018/10/17/mini_181017020836938365.png" />';
@@ -153,6 +155,7 @@
           }
         }
           ?>
+    
     </footer>
 </body>
 </html>
