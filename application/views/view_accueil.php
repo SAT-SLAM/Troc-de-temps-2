@@ -124,26 +124,5 @@
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 
-    <footer class="footer text-center ">
-
-    <div id='divUser'></div>
-    <h1>Fonction Sacha</h1>
-    
-        <?php
-          foreach ($lesUsers as $unUser){
-            echo $unUser->photoUser;
-            echo "<option value='" .$unUser->idUser. "'>".$unUser->nomUser."</option>";
-            if ($unUser->sexe == 0){
-                echo  '<img src="https://nsa39.casimages.com/img/2018/10/17/mini_181017020836938365.png" />';
-               
-              }
-               else {
-                 echo '<img src="https://nsa39.casimages.com/img/2018/10/17/mini_181017020836876248.png" />';
-
-          }
-        }
-          ?>
-    
-    </footer>
 </body>
 </html>
