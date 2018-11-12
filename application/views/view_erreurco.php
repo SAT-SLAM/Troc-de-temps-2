@@ -36,3 +36,4 @@
 </div>
 
 <div class="info">Veuillez-vous reconnecter pour accéder à cette page</div>
+<div class="reconnexion"><a href="<?php echo base_url('controller_main/index');?>" id="connexion">Reconnexion</a></div>
