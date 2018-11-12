@@ -86,23 +86,7 @@
             </div>
         
           <div class="tab-content tab-space">
-              <?php foreach($lesOffres as $uneOffre){ ?>
-                <h2><?php echo $uneOffre->nomService?><h2>
-                    <h3><?php echo $uneOffre->dateOffre ?></h3>
-                        <h4><?php echo $uneOffre->descriptionOffre ?></h4>
-            
-            
-                <?php } ?>
-
-                <?php
-                    foreach($lesOffres as $uneOffre)
-                    {
-                        echo $uneOffre->idOffre;
-                        echo $uneOffre->idService;
-                        echo $uneOffre->nomService;
-                        echo $uneOffre->descriptionOffre;
-                    }
-                ?>
+              
               </div>
 
             <div class="tab-pane text-center gallery" id="works">
