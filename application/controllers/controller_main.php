@@ -78,7 +78,15 @@ class controller_main extends CI_Controller {
             $this->load->view("view_connexion", $data);
         }
     }
+    //fonction sacha
 
+    public function AfficherLesUsers()
+    {
+        $this->load->model('model_users');
+        $data['lesUsers']=$this->model_users->getUsers();
+        $this->load->view('view_userSacha',$data);
+    }
+    
     // Offres (affichage, création, modification)
 
    

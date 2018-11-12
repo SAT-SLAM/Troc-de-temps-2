@@ -34,6 +34,9 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="dropdown nav-item">
+                    <a href="<?php echo base_url('controller_main/AfficherLesUsers'); ?>">
+                          Nos utilisateurs
+                      </a>
                       <a href="deconnexion" class="dropdown-toggle nav-link">
                           Déconnexion
                       </a>
@@ -138,7 +141,8 @@
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 
     <footer class="footer text-center ">
-    
+
+    <div id='divUser'></div>
     <h1>Fonction Sacha</h1>
     
         <?php
