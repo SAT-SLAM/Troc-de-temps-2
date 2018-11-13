@@ -32,13 +32,13 @@
                                 <div class="form-group">
 
 
-                                    <input type="text" class="form-control" name="login" placeholder="Login" checked>
+                                    <input type="text" class="form-control" name="login" placeholder="Login" checked required>
 
                                 </div>
 
                                 <div class="form-group">
 
-                                    <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" checked>
+                                    <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" checked required>
 
                                 </div>
                                 <div class="forgot">
