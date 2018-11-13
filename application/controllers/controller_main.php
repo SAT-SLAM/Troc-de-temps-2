@@ -90,10 +90,32 @@ class controller_main extends CI_Controller {
     // Offres (affichage, création, modification)
 
     public function viewOffre(){
-        $this->load->view('view_offre');
+        $this->load->model('Model_service');
+        $data['lesServices'] = $this->Model_service->getAllServices();
+        $this->load->view('view_offre', $data);
     }
     public function viewDemande(){
-        $this->load->view('view_demande');
+        $this->load->model('Model_service');
+        $data['lesServices'] = $this->Model_service->getAllServices();
+        $this->load->view('view_demande', $data);
+    }
+
+    public function setOffre()
+    {
+        $this->load->model("model_offre");
+        $data["user"] = $this->model_offre->getUser2($_POST["login"]);
+        if ($data["user"] == null)
+        {
+            $this->model_infoUser->setUser($_POST["nomUser"], $_POST["sexe"], $_POST["email"], $_POST["dateNaissance"], $_POST["login"], $_POST["mdp"], $_POST["photoUser"]);
+            $data["nomUser"] = $_POST["nomUser"];
+            $data["sexe"] = $_POST["sexe"];
+            $data["email"] = $_POST["email"];
+            $data["dateNaissance"] = $_POST["dateNaissance"];
+            $data["login"] = $_POST["login"];
+            $data["mdp"] = $_POST["mdp"];
+            $data["photoUser"] = $_POST["photoUser"];
+            $this->load->view("view_connexion", $data);
+        }
     }
 
 }
