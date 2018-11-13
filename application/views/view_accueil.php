@@ -90,10 +90,12 @@
         
             <div class="tab-content tab-space">
             <div class="tab-pane active text-center gallery" id="studio">
-            **********
+            *******
+            <a href="<?php echo base_url('controller_main/viewOffre');?>" id="offre">Créer une offre</a>
   			</div>
             <div class="tab-pane text-center gallery" id="works">
-      			**
+            **
+             <a href="<?php echo base_url('controller_main/viewDemande');?>" id="demande">Créer une demande</a>
   			</div>
             <div class="tab-pane text-center gallery" id="favorite">
       			***

@@ -89,6 +89,12 @@ class controller_main extends CI_Controller {
     
     // Offres (affichage, création, modification)
 
+    public function viewOffre(){
+        $this->load->view('view_offre');
+    }
+    public function viewDemande(){
+        $this->load->view('view_demande');
+    }
 
 }
 ?>
