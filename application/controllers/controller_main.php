@@ -33,9 +33,7 @@ class controller_main extends CI_Controller {
          
             }
             else{
-              $this->session->set_flashdata('error_msg',  "Votre login ou votre mot de passe est incorrect");
               $this->load->view("view_connexion");
-      
             }
 
 }
