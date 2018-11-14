@@ -28,22 +28,23 @@
                             <form id="signin" role="form" method="post" action="<?php echo base_url('controller_main/setInscription'); ?>">
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="nomUser" name="nomUser" placeholder="Nom et prénom" checked required>
+                                    <input type="text" class="form-control" id="numDemande" name="numDemande" placeholder="Numéro de la demande" checked required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" checked required>
+                                    <input type="text" class="form-control" id="descriptionDemande" name="descriptionDemande" placeholder="Description de votre demande" checked required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" id="dateNaissance" name="dateNaissance" checked required>
+                                    <input type="date" class="form-control" id="dateDemande" name="dateDemande" checked required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="login" name="login" placeholder="login" checked required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="photoUser" name="photoUser" placeholder="URL de votre image" required>
+                                <?php 
+						            echo "<select id='lstServices'>" ;
+                                    foreach($lesServices as $unService)
+                                        {
+                                             echo "<option value='" .$unService->idService. "'>".$unService->nomService."</option>";
+                                        }  
+					                echo "</select>" ;
+					            ?>   
                                 </div>
                                     <button type="submit" class="btn btn-primary" id="inscription">Ajouter l'offre</button>
                                 </form>
