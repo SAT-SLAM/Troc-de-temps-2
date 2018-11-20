@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Création d'une offre</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="./JQuery/jquery-3.1.1.js"></script>
-    <script type="text/javascript" src="./JS/mesFonctions.js"></script>
+    <script type="text/javascript" src="../JQuery/jquery-3.1.1.js"></script>
+    <!-- <script type="text/javascript" src="./JS/mesFonctions.js"></script> -->
     <link rel="stylesheet" href="../CSS/offreDemande.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -25,27 +25,28 @@
                                 <br>
                                 <br>
                             </div>
-                            <form id="signin" role="form" method="post" action="<?php echo base_url('controller_main/setInscription'); ?>">
+                             <form id="newoffre" role="form" method="post" action="<?php echo base_url('controller_main/session'); ?>"> 
 
+                                
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="nomUser" name="nomUser" placeholder="Nom et prénom" checked required>
+                                <input type="text" class="form-control" id="descriptionOffre" name="descriptionOffre" placeholder="Description de votre offre" checked required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" checked required>
+                                <input type="date" class="form-control" id="dateOffre" name="dateOffre" checked required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" id="dateNaissance" name="dateNaissance" checked required>
+                                <?php 
+						            echo "<select id='idService'>" ;
+                                    foreach($lesServices as $unService)
+                                        {
+                                             echo "<option value='" .$unService->idService. "'>".$unService->nomService."</option>";
+                                        }  
+					                echo "</select>" ;
+					                ?>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="login" name="login" placeholder="login" checked required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="photoUser" name="photoUser" placeholder="URL de votre image" required>
-                                </div>
-                                    <button type="submit" class="btn btn-primary" id="inscription">Ajouter l'offre</button>
+                                    <button type="submit" class="btn btn-primary" id="offre">Ajouter l'offre</button>
+                                    <br><br>
+                                    <button type="submit" class="btn btn-primary" id="accueil">Accueil</button>
                                 </form>
                             </div>
                     </div></div></div>

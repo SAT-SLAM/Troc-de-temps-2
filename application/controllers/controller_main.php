@@ -56,6 +56,7 @@ class controller_main extends CI_Controller {
           $this->load->model('model_users');
           $data["lesUsers"]=$this->model_users->getUsers();
           $this->load->view('view_accueil', $data);
+          
         }
         else{
           $this->load->view("view_erreurco");
@@ -88,11 +89,41 @@ class controller_main extends CI_Controller {
     // Offres (affichage, création, modification)
 
     public function viewOffre(){
-        $this->load->view('view_offre');
+        $this->load->model('model_offre');
+        $data['lesOffres'] = $this->model_offre->getLastOffre();
+        $data['lesServices'] = $this->model_offre->getLesServices();
+        $this->load->view('view_offre', $data);
     }
     public function viewDemande(){
-        $this->load->view('view_demande');
+        $this->load->model('model_offre');
+        $data['lesServices'] = $this->model_offre->getLesServices();
+        $this->load->view('view_demande', $data);
     }
 
+    public function newOffre() {
+        $this->load->model('model_offre');
+        $data["offre"] = $this->model_offre->getOffres2($_SESSION['idUser']);
+        if($data["offre"] == null){
+            $this->load->model('model_offre');
+            $data["idOffre"] = $_GET["idOffre"];
+            $data["descriptionOffre"] = $_GET["descriptionOffre"];
+            $data["dateOffre"] = $_GET["dateOffre"];
+            $data["idService"] = $_GET["idService"];
+            $data["idUser"] = $_SESSION['idUser'];
+            $this->model_offre->insertOffre($_GET["idOffre"], $_GET["descriptionOffre"], $_GET["dateOffre"],  $_GET["idService"],  $_SESSION['idUser']);
+            $this->load->view("view_accueil", $data);
+            //printline('Votre offre a été créé !');
+        
+        // else {
+        //     echo('Erreur sur la création, veuillez recommencer');
+        //     $data['lesServices'] = $this->model_offre->getLesServices();
+        //     $this->load->view('view_offre', $data);
+        // }
+            
+    }
 }
+
+}
+
+
 ?>
