@@ -90,7 +90,7 @@ class controller_main extends CI_Controller {
 
     public function viewOffre(){
         $this->load->model('model_offre');
-        $data['lesOffres'] = $this->model_offre->getLastOffre();
+        
         $data['lesServices'] = $this->model_offre->getLesServices();
         $this->load->view('view_offre', $data);
     }
@@ -102,15 +102,15 @@ class controller_main extends CI_Controller {
 
     public function newOffre() {
         $this->load->model('model_offre');
-        $data["offre"] = $this->model_offre->getOffres2($_SESSION['idUser']);
-        if($data["offre"] == null){
+        //$data["offre"] = $this->model_offre->getOffres2($_SESSION['idUser']);
+        //if($data["offre"] == null){
             $this->load->model('model_offre');
-            $data["idOffre"] = $_GET["idOffre"];
-            $data["descriptionOffre"] = $_GET["descriptionOffre"];
-            $data["dateOffre"] = $_GET["dateOffre"];
-            $data["idService"] = $_GET["idService"];
+            $data["idOffre"] = $_POST["idOffre"];
+            $data["descriptionOffre"] = $_POST["descriptionOffre"];
+            $data["dateOffre"] = $_POST["dateOffre"];
+            $data["idService"] = $_POST["idService"];
             $data["idUser"] = $_SESSION['idUser'];
-            $this->model_offre->insertOffre($_GET["idOffre"], $_GET["descriptionOffre"], $_GET["dateOffre"],  $_GET["idService"],  $_SESSION['idUser']);
+            $this->model_offre->insertOffre($_POST["idOffre"], $_POST["descriptionOffre"], $_POST["dateOffre"],  $_POST["idService"],  $_SESSION['idUser']);
             $this->load->view("view_accueil", $data);
             //printline('Votre offre a été créé !');
         
@@ -121,9 +121,11 @@ class controller_main extends CI_Controller {
         // }
             
     }
-}
 
 }
+
+
+
 
 
 ?>

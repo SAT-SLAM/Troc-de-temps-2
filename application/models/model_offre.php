@@ -5,10 +5,10 @@ class model_offre extends CI_Model{
         return $sql->result();
     }
 
-    function getOffres2($idUser){
-        $sql = $this->db->query("select idOffre, descriptionOffre, dateOffre, offre.idService, idUser from offre inner join service on offre.idService = service.idService where idUser= ".$idUser);
-         return $sql->result();
-     }
+    // function getOffres2($idUser){
+    //     $sql = $this->db->query("select idOffre, descriptionOffre, dateOffre, offre.idService, idUser from offre inner join service on offre.idService = service.idService where idUser= ".$idUser);
+    //      return $sql->result();
+    //  }
     
     function getLesServices()
     {
@@ -16,11 +16,6 @@ class model_offre extends CI_Model{
     return $sql->result();
     }
 
-    function getLastOffre()
-    {
-        $sql = $this->db->query("select max(idOffre) from offre");
-        return $sql->result();
-    }
 
     function insertOffre($idOffre, $descriptionOffre, $dateOffre, $idService, $idUser)
     {
